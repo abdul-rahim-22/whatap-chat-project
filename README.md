@@ -36,6 +36,11 @@ npm start
 - `GET /api/messages`
 - `POST /api/messages`
 
+Environment variables:
+
+- `PORT` (default: `3000`)
+- `CORS_ORIGIN` (default: `http://localhost:3000`)
+
 Payload for POST:
 
 ```json

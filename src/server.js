@@ -3,10 +3,12 @@ require('dotenv').config();
 const http = require('http');
 const path = require('path');
 const express = require('express');
+const { randomUUID } = require('crypto');
 const { Server } = require('socket.io');
 const { createApp } = require('./app');
 
 const PORT = Number(process.env.PORT || 3000);
+const CORS_ORIGIN = process.env.CORS_ORIGIN || 'http://localhost:3000';
 const store = { messages: [] };
 
 const app = createApp(store);
@@ -14,7 +16,7 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 
 const server = http.createServer(app);
 const io = new Server(server, {
-  cors: { origin: '*' },
+  cors: { origin: CORS_ORIGIN },
 });
 
 io.on('connection', (socket) => {
@@ -29,7 +31,7 @@ io.on('connection', (socket) => {
     }
 
     const message = {
-      id: Date.now().toString(),
+      id: randomUUID(),
       user,
       text,
       createdAt: new Date().toISOString(),

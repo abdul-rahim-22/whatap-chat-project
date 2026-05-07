@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const { randomUUID } = require('crypto');
 
 function createApp(store) {
   const app = express();
@@ -23,7 +24,7 @@ function createApp(store) {
     }
 
     const message = {
-      id: Date.now().toString(),
+      id: randomUUID(),
       user: String(user).trim(),
       text: String(text).trim(),
       createdAt: new Date().toISOString(),
