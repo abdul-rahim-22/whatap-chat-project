@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WhatsApp Chat</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>WhatsApp Chat</h1>
+      <form id="join-form" class="row">
+        <input id="username" placeholder="Your name" required />
+        <button type="submit">Join</button>
+      </form>
+
+      <section id="chat-panel" class="hidden">
+        <ul id="messages"></ul>
+
+        <form id="message-form" class="row">
+          <input id="message-input" placeholder="Type your message..." required />
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/client.js"></script>
+  </body>
+</html>

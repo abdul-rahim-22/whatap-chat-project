@@ -1,0 +1,10 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; background: #f4f6fb; }
+.app { max-width: 720px; margin: 24px auto; padding: 16px; background: white; border-radius: 12px; box-shadow: 0 2px 14px rgba(0,0,0,.08); }
+.row { display: flex; gap: 8px; }
+input { flex: 1; padding: 10px; border: 1px solid #cbd5e1; border-radius: 8px; }
+button { padding: 10px 14px; border: 0; border-radius: 8px; background: #2563eb; color: #fff; cursor: pointer; }
+button:hover { background: #1d4ed8; }
+#messages { list-style: none; margin: 16px 0; padding: 0; max-height: 420px; overflow: auto; border: 1px solid #e2e8f0; border-radius: 8px; }
+#messages li { padding: 8px 10px; border-bottom: 1px solid #f1f5f9; }
+.hidden { display: none; }
